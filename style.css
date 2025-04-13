@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+
+body {
+  background: linear-gradient(145deg, #eaeaea, #d6d6d6);
+  font-family: 'Rubik', sans-serif;
+  color: #333;
+  text-align: center;
+  padding: 30px;
+}
+
+h1 {
+  font-size: 36px;
+  color: #444;
+  margin-bottom: 10px;
+  text-shadow: 0 1px 1px #fff;
+}
+
+.stats {
+  font-size: 17px;
+  color: #666;
+  margin: 10px 0 25px;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  gap: 16px;
+  justify-content: center;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  perspective: 1000px;
+  border-radius: 12px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  transition: 0.3s ease;
+}
+
+.back {
+  background: #ffffff;
+  border: 1px solid #ccc;
+  color: #888;
+}
+
+.front {
+  background: linear-gradient(135deg, #b0bec5, #eceff1);
+  color: #333;
+  transform: rotateY(180deg);
+}
+
+.card:hover .front,
+.card:hover .back {
+  box-shadow: 0 0 15px rgba(150, 150, 150, 0.4);
+}
+
+button {
+  background: #90a4ae;
+  border: none;
+  color: #fff;
+  padding: 10px 22px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 25px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px #cfd8dc;
+}
+
+button:hover {
+  background: #78909c;
+  box-shadow: 0 0 16px #b0bec5;
+}
